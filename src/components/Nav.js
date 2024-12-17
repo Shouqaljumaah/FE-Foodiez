@@ -1,48 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { removeToken } from "../api/storge";
 
 function Nav() {
-  const [user, setUser] = useState("");
+  //   const [user, setUser] = useState("");
   const navigate = useNavigate();
+
+  const applyNavClass = ({ isActive }) => {
+    return isActive ? "nav-link-active" : "";
+  };
+
   return (
     <nav>
       <div className="navhead">
-        <NavLink
-          style={({ isActive }) => {
-            return { textDecoration: isActive ? "underline" : "non" };
-          }}
-          to={"/home"}
-        >
+        <NavLink className={applyNavClass} to={"/"}>
           Home
         </NavLink>
 
         <div className="navhead">
-          <NavLink
-            to={"/Categories"}
-            style={({ isActive }) => {
-              return { textDecoration: isActive ? "underline" : "non" };
-            }}
-          >
+          <NavLink to={"/Categories"} className={applyNavClass}>
             Categorise
           </NavLink>
 
-          <NavLink
-            to={"/Recipes"}
-            style={({ isActive }) => {
-              return { textDecoration: isActive ? "underline" : "non" };
-            }}
-          >
+          <NavLink to={"/Recipes"} className={applyNavClass}>
             Recipes
           </NavLink>
 
-          <NavLink
-            to={"/Ingredients"}
-            style={({ isActive }) => {
-              return { textDecoration: isActive ? "underline" : "non" };
-            }}
-          >
+          <NavLink to={"/Ingredients"} className={applyNavClass}>
             Ingredients
+          </NavLink>
+          <NavLink to={"/Sginup"} className={applyNavClass}>
+            Sign up
+          </NavLink>
+          <NavLink to={"/Login"} className={applyNavClass}>
+            Login
           </NavLink>
 
           <button

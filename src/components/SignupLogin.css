@@ -24,7 +24,7 @@
   box-shadow: #797979;
 }
 .text {
-  color: skyblue;
+  color: black;
   font-size: 45px;
   font-weight: 700;
   /* text-align: end; */
@@ -72,7 +72,7 @@
 }
 
 .forget-password span {
-  color: skyblue;
+  color: black;
   cursor: pointer;
 }
 
@@ -89,7 +89,7 @@
   width: 220px;
   height: 59px;
   color: #fff;
-  background: skyblue;
+  background: black;
   border: none;
   font-size: 19px;
   font-weight: 19px;
