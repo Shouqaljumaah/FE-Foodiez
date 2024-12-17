@@ -4,12 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SignupLogin from "./components/SignupLogin";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Catagory from "./components/Catagory";
+import Categories from "./components/Categories";
 import Recipes from "./components/Recipes";
 import Ingredients from "./components/Ingredients";
 import Favourite from "./components/Favourite";
@@ -21,30 +22,23 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div>
-        <SignupLogin />
+        <Nav />
+        <Home />
       </div>
     ),
   },
   {
-    path: "/",
+    path: "/Categories",
     element: (
       <div>
         <Nav />
-        <Catagory />
+        <Categories />
       </div>
     ),
   },
+
   {
-    path: "/",
-    element: (
-      <div>
-        <Nav />
-        <Recipes />
-      </div>
-    ),
-  },
-  {
-    path: "/",
+    path: "/Ingredients",
     element: (
       <div>
         <Nav />
@@ -53,7 +47,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/",
+    path: "/Favourite",
     element: (
       <div>
         <Nav />
@@ -62,11 +56,29 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/home",
+    path: "/Recipes",
     element: (
       <div>
         <Nav />
-        <Home />
+        <Recipes />
+      </div>
+    ),
+  },
+  {
+    path: "/Signup",
+    element: (
+      <div>
+        <Nav />
+        <Signup />
+      </div>
+    ),
+  },
+  {
+    path: "/Login",
+    element: (
+      <div>
+        <Nav />
+        <Login />
       </div>
     ),
   },

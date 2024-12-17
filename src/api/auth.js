@@ -11,7 +11,7 @@ const register = async (userInfo) => {
     formData.append(key, userInfo[key]);
   }
   const response = await instance.post(
-    "/mini-project/api/auth/register",
+    "http://localhost:8000/signup",
     formData
   );
 
@@ -19,56 +19,32 @@ const register = async (userInfo) => {
   return response.token;
 };
 const login = async (userInfo) => {
-  const response = await instance.post(
-    "/mini-project/api/auth/login",
-    userInfo
-  );
+  const response = await instance.post("http://localhost:8000/login", userInfo);
 
   setToken(response.token);
   return response.token;
 };
 
-const getAllUsers = async () => {
-  const data = await instance.get("/mini-project/api/auth/users");
+const getAllRecipes = async () => {
+  const data = await instance.get("http://localhost:8000/recipes");
   return data;
 };
 
-const getAllTransactions = async () => {
-  const data = await instance.get("/mini-project/api/transactions");
+const getAllCatagories = async () => {
+  const data = await instance.get("http://localhost:8000/catagories");
   return data;
 };
 
-const getUser = async () => {
-  const data = await instance.get("/mini-project/api/auth/me");
-  return data;
-};
-const deposit = async (amount) => {
-  const data = await instance.put(
-    "/mini-project/api/transactions/deposit",
-    amount
-  );
-  return data;
-};
-const withdraw = async (amount) => {
-  const data = await instance.put(
-    "/mini-project/api/transactions/withdraw",
-    amount
-  );
+const getAllIngredients = async () => {
+  const data = await instance.get("http://localhost:8000/ingredients");
   return data;
 };
 
-// export { register, login };
-// const checkToken = () => {
-//   const token = localStorage.getItem("token");
-//   if (token) {
-//     const decode = jwt_decode(token);
-//     const cureentTime = Date.now() / 1000;
-//     if (decode.exp < cureentTime) {
-//       localStorage.removeItem("token");
-//       return false;
-//     }
-//     return true;
-//   }
-//   return false;
-// };
-export { register, login, storeToken };
+export {
+  register,
+  login,
+  storeToken,
+  getAllCatagories,
+  getAllRecipes,
+  getAllIngredients,
+};
