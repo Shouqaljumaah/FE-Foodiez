@@ -5,49 +5,54 @@ import { removeToken } from "../api/storge";
 function Nav() {
   //   const [user, setUser] = useState("");
   const navigate = useNavigate();
-
-  const applyNavClass = ({ isActive }) => {
-    return isActive ? "nav-link-active" : "";
-  };
-
   return (
-    <nav>
-      <div className="navhead">
-        <NavLink className={applyNavClass} to={"/"}>
-          Home
-        </NavLink>
+    <nav className="bg-gray-300">
+      <div className="max-w-7xl mx-auto px- m:px-6 lg:px-8">
+        <div className="flex items-center  h-16 ">
+          <div className="flex items-center ">
+            <NavLink className="font-mono text-xl  text-gray-700" to={"/"}>
+              Home
+            </NavLink>
 
-        <div className="navhead">
-          <NavLink to={"/Categories"} className={applyNavClass}>
-            Categorise
-          </NavLink>
+            <div className="navhead">
+              <NavLink
+                to={"/Categories"}
+                className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Categorise
+              </NavLink>
 
-          <NavLink to={"/Recipes"} className={applyNavClass}>
-            Recipes
-          </NavLink>
+              <NavLink
+                to={"/Recipes"}
+                className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Recipes
+              </NavLink>
 
-          <NavLink to={"/Ingredients"} className={applyNavClass}>
-            Ingredients
-          </NavLink>
-          <NavLink to={"/Sginup"} className={applyNavClass}>
-            Sign up
-          </NavLink>
-          <NavLink to={"/Login"} className={applyNavClass}>
-            Login
-          </NavLink>
+              <NavLink
+                to={"/Ingredients"}
+                className="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Ingredients
+              </NavLink>
+              <NavLink to={"/Sginup"}>Sign up</NavLink>
+              <NavLink to={"/Login"}>Login</NavLink>
 
-          <button
-            onClick={() => {
-              removeToken();
-              navigate("/");
-            }}
-          >
-            {" "}
-            Logout
-          </button>
+              <button
+                onClick={() => {
+                  removeToken();
+                  navigate("/");
+                }}
+                className="font-mono text-xl  text-gray-700"
+              >
+                {" "}
+                Logout
+              </button>
 
-          <NavLink to="/login"></NavLink>
-          <NavLink to="/register"></NavLink>
+              <NavLink to="/login"></NavLink>
+              <NavLink to="/register"></NavLink>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

@@ -10,33 +10,30 @@ const register = async (userInfo) => {
   for (const key in userInfo) {
     formData.append(key, userInfo[key]);
   }
-  const response = await instance.post(
-    "http://localhost:8000/signup",
-    formData
-  );
+  const response = await instance.post("signup", formData);
 
   setToken(response.token);
   return response.token;
 };
 const login = async (userInfo) => {
-  const response = await instance.post("http://localhost:8000/login", userInfo);
+  const response = await instance.post("login", userInfo);
 
   setToken(response.token);
   return response.token;
 };
 
 const getAllRecipes = async () => {
-  const data = await instance.get("http://localhost:8000/recipes");
+  const data = await instance.get("recipes");
   return data;
 };
 
 const getAllCatagories = async () => {
-  const data = await instance.get("http://localhost:8000/catagories");
+  const data = await instance.get("catagories");
   return data;
 };
 
 const getAllIngredients = async () => {
-  const data = await instance.get("http://localhost:8000/ingredients");
+  const data = await instance.get("ingredients");
   return data;
 };
 

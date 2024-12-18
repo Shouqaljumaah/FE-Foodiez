@@ -7,7 +7,6 @@ import { register } from "../api/auth";
 
 const SignUp = () => {
   const handleSubmit = (values) => {
-    // Submit data to the backend here
     console.log("Form data submitted:", values);
   };
 
