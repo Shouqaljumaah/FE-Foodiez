@@ -1,56 +1,82 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { removeToken } from "../api/storge";
+import SignUpModal from "./SignupModal";
+import LoginModal from "./LoginModal";
+import { useState } from "react";
 
 function Nav() {
-  //   const [user, setUser] = useState("");
   const navigate = useNavigate();
+  const [showSignupModal, setShowSignupModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const applyNavClass = ({ isActive }) => {
     return isActive ? "nav-link-active" : "";
   };
 
+  const handleBtnCloseClicked = () => {
+    setShowSignupModal(false);
+  };
+  const handleBtnCloseClickedLogin = () => {
+    setShowLoginModal(false);
+  };
+
   return (
-    <nav>
-      <div className="navhead">
-        <NavLink className={applyNavClass} to={"/"}>
-          Home
-        </NavLink>
-
+    <>
+      <nav>
         <div className="navhead">
-          <NavLink to={"/Categories"} className={applyNavClass}>
-            Categorise
+          <NavLink className={applyNavClass} to={"/"}>
+            Home
           </NavLink>
 
-          <NavLink to={"/Recipes"} className={applyNavClass}>
-            Recipes
-          </NavLink>
+          <div className="navhead">
+            <NavLink to={"/Categories"} className={applyNavClass}>
+              Categorise
+            </NavLink>
 
-          <NavLink to={"/Ingredients"} className={applyNavClass}>
-            Ingredients
-          </NavLink>
-          <NavLink to={"/Sginup"} className={applyNavClass}>
-            Sign up
-          </NavLink>
-          <NavLink to={"/Login"} className={applyNavClass}>
-            Login
-          </NavLink>
+            <NavLink to={"/Recipes"} className={applyNavClass}>
+              Recipes
+            </NavLink>
 
-          <button
-            onClick={() => {
-              removeToken();
-              navigate("/");
-            }}
-          >
-            {" "}
-            Logout
-          </button>
+            <NavLink
+              className={applyNavClass}
+              onClick={() => {
+                setShowSignupModal(!showSignupModal);
+              }}
+            >
+              Sign up
+            </NavLink>
+            <NavLink
+              className={applyNavClass}
+              onClick={() => {
+                setShowLoginModal(!showLoginModal);
+              }}
+            >
+              Login
+            </NavLink>
 
-          <NavLink to="/login"></NavLink>
-          <NavLink to="/register"></NavLink>
+            <button
+              onClick={() => {
+                removeToken();
+                navigate("/");
+              }}
+            >
+              {" "}
+              Logout
+            </button>
+
+            <NavLink to="/login"></NavLink>
+            <NavLink to="/sginUp"></NavLink>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      {showSignupModal && (
+        <SignUpModal handleBtnCloseClicked={handleBtnCloseClicked} />
+      )}
+      {showLoginModal && (
+        <LoginModal handleBtnCloseClicked={handleBtnCloseClickedLogin} />
+      )}
+    </>
   );
 }
 

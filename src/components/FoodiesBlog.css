@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  margin-top: 200px;
+  background: #fff;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.body {
+  background-color: whitesmoke;
+}
+.navhead {
+  display: flex;
+  gap: 10px;
+  row-gap: 10px;
+  column-gap: 20px;
+  justify-content: center;
+  flex-direction: row;
+  order: 4;
+}
+.box {
+  box-sizing: content-box;
+  box-shadow: #797979;
+}
+.text {
+  color: black;
+  font-size: 45px;
+  font-weight: 700;
+
+  /* text-align: end; */
+}
+
+.playwrite {
+  font-family: "Playwrite GB S", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  padding-inline-start: 10vw;
+  padding-block: 6vw;
+}
+.titillium-web-extralight {
+  font-family: "Titillium Web", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.titillium-web-light {
+  font-family: "Titillium Web", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.titillium-web-regular {
+  font-family: "Titillium Web", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titillium-web-semibold {
+  font-family: "Titillium Web", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.titillium-web-bold {
+  font-family: "Titillium Web", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.titillium-web-black {
+  font-family: "Titillium Web", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.titillium-web-extralight-italic {
+  font-family: "Titillium Web", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.titillium-web-light-italic {
+  font-family: "Titillium Web", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.titillium-web-regular-italic {
+  font-family: "Titillium Web", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.titillium-web-semibold-italic {
+  font-family: "Titillium Web", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.titillium-web-bold-italic {
+  font-family: "Titillium Web", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.outfitfont {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
