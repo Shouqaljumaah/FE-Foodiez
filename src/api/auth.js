@@ -5,7 +5,7 @@ const storeToken = (token) => {
   localStorage.setItem("token", token);
 };
 
-const register = async (userInfo) => {
+const signup = async (userInfo) => {
   const formData = new FormData();
   for (const key in userInfo) {
     formData.append(key, userInfo[key]);
@@ -41,7 +41,7 @@ const getAllIngredients = async () => {
 };
 
 export {
-  register,
+  signup,
   login,
   storeToken,
   getAllCatagories,

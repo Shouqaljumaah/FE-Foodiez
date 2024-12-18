@@ -4,15 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
+// import Signup from "./components/Signup";
+// import Login from "./components/Login";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Categories from "./components/Categories";
 import Recipes from "./components/Recipes";
-import Ingredients from "./components/Ingredients";
+
 import Favourite from "./components/Favourite";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -38,15 +38,6 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/Ingredients",
-    element: (
-      <div>
-        <Nav />
-        <Ingredients />
-      </div>
-    ),
-  },
-  {
     path: "/Favourite",
     element: (
       <div>
@@ -61,24 +52,6 @@ const router = createBrowserRouter([
       <div>
         <Nav />
         <Recipes />
-      </div>
-    ),
-  },
-  {
-    path: "/Signup",
-    element: (
-      <div>
-        <Nav />
-        <Signup />
-      </div>
-    ),
-  },
-  {
-    path: "/Login",
-    element: (
-      <div>
-        <Nav />
-        <Login />
       </div>
     ),
   },
